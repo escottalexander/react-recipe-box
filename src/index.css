@@ -3,3 +3,58 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+#app {
+	font-family: 'Roboto', sans-serif;
+	background-color:#ffc425;
+	margin: 30px 30px 30px 30px;
+	padding: 0px 30px 30px 30px;
+	border: 2px solid;
+    border-radius: 25px;
+	box-shadow: 10px 10px 5px #888888;
+}
+.recipe {
+	background-color: #00b159;
+	border: 2px solid;
+    border-radius: 3px;
+	padding: 5px;
+	margin: 5px;
+}
+.recipeEdit {
+	font-weight: bold;
+	background-color: #00b159;
+	border: 2px solid;
+    border-radius: 3px;
+	padding: 5px;
+	margin: 5px;
+}
+h1 {
+	font-size:50px;
+	font-family: 'Lobster', cursive;
+}
+button{
+	font-size: 16px;
+	background-color: #00aedb;
+	border: 2px solid;
+    border-radius: 25px;
+}
+button+button {
+	background-color: #d11141;
+
+}
+#editName {
+	height: 18px;
+	width: 120px;
+	border: 2px solid;
+    border-radius: 3px;
+}
+#editIngredients {
+	height: 50px;
+	width: 150px;
+	border: 2px solid;
+    border-radius: 3px;
+}
+footer {
+	font-size:20px;
+	font-family: 'Lobster', cursive;
+	margin: 20px 0px 0px 0px;
+}
