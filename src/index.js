@@ -5,8 +5,7 @@ import './index.css';
 class RecipeOrganizer extends React.Component {
   localStorageFinder() {
     if (localStorage.getItem('_localrecipebox')) {
-      var temp = localStorage.getItem('__localrecipebox');
-      console.log(temp);
+      var temp = localStorage.getItem('_localrecipebox');
       return {recipes : JSON.parse(temp)};
     } else {
       return {
@@ -67,7 +66,7 @@ class RecipeOrganizer extends React.Component {
     var save = this.state.recipes.filter(function(item) {
       return item = true
     });
-    localStorage.setItem('__localrecipebox', JSON.stringify(save));
+    localStorage.setItem('_localrecipebox', JSON.stringify(save));
   }
   cancelEdit(index) {
     this.state.recipes[index].edit = false;
@@ -83,7 +82,7 @@ class RecipeOrganizer extends React.Component {
     var save = this.state.recipes.filter(function(item) {
       return item = true
     });
-    localStorage.setItem('__localrecipebox', JSON.stringify(save));
+    localStorage.setItem('_localrecipebox', JSON.stringify(save));
   }
   render() {
     const displayItems = this.state.recipes.map((item, index) => (

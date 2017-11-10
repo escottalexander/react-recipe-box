@@ -2,18 +2,28 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+
 }
 #app {
 	font-family: 'Roboto', sans-serif;
-	background-color:#ffc425;
+  background: #031927; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(bottom, #031927 , #508AA8); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, #031927, #508AA8); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, #031927, #508AA8); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, #031927 , #508AA8); /* Standard syntax */
 	margin: 30px 30px 30px 30px;
 	padding: 0px 30px 30px 30px;
 	border: 2px solid;
-    border-radius: 25px;
+    border-radius: 10px;
 	box-shadow: 10px 10px 5px #888888;
+
 }
 .recipe {
-	background-color: #00b159;
+  background: #9DD1F1; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(bottom, #9DD1F1 , #508AA8); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, #9DD1F1, #508AA8); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, #9DD1F1, #508AA8); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, #9DD1F1 , #508AA8); /* Standard syntax */
 	border: 2px solid;
     border-radius: 3px;
 	padding: 5px;
@@ -21,25 +31,42 @@ body {
 }
 .recipeEdit {
 	font-weight: bold;
-	background-color: #00b159;
-	border: 2px solid;
+  background: #9DD1F1; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(bottom, #9DD1F1 , #508AA8); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, #9DD1F1, #508AA8); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, #9DD1F1, #508AA8); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, #9DD1F1 , #508AA8); /* Standard syntax */
+	border: 2px dashed;
     border-radius: 3px;
 	padding: 5px;
 	margin: 5px;
 }
 h1 {
+  color: #ffffff;
 	font-size:50px;
 	font-family: 'Lobster', cursive;
 }
 button{
 	font-size: 16px;
-	background-color: #00aedb;
+  background: #508AA8; /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(#508AA8, #192D3A); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(#508AA8, #192D3A); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(#508AA8, #192D3A); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(#508AA8, #192D3A); /* Standard syntax */
 	border: 2px solid;
-    border-radius: 25px;
+    border-radius: 10px;
+    margin: 5px;
 }
 button+button {
-	background-color: #d11141;
+  background: #BA1200; /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(#9DD1F1, #BA1200); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(#9DD1F1, #BA1200); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(#9DD1F1, #BA1200); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(#9DD1F1, #BA1200); /* Standard syntax */
 
+}
+button:hover{
+	  border-radius: 20px;
 }
 #editName {
 	height: 18px;
