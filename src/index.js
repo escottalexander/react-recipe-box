@@ -6,7 +6,7 @@ class RecipeOrganizer extends React.Component {
   localStorageFinder() {
     if (localStorage.getItem('_localrecipebox')) {
       var temp = localStorage.getItem('_localrecipebox');
-      return {recipes : JSON.parse(temp)};
+      return { recipes: JSON.parse(temp) };
     } else {
       return {
         recipes: [
@@ -47,8 +47,8 @@ class RecipeOrganizer extends React.Component {
   }
   closeAllOpen() {
     var allList = this.state.recipes;
-    var list = allList.filter(function(item) {
-      return item = true
+    var list = allList.filter(function (item) {
+      return item = true;
     });
     for (let i = 0; i < list.length; i++) {
       list[i].edit = false;
@@ -63,13 +63,16 @@ class RecipeOrganizer extends React.Component {
   deleteRecipe(index) {
     delete this.state.recipes[index];
     this.forceUpdate();
-    var save = this.state.recipes.filter(function(item) {
+    var save = this.state.recipes.filter(function (item) {
       return item = true
     });
     localStorage.setItem('_localrecipebox', JSON.stringify(save));
   }
   cancelEdit(index) {
     this.state.recipes[index].edit = false;
+    if (this.state.recipes[index].name === 'Recipe Name' && this.state.recipes[index].ingredients === 'Ingredients') {
+      this.deleteRecipe(index);
+    }
     this.forceUpdate();
   }
   saveRecipe(index) {
@@ -79,7 +82,7 @@ class RecipeOrganizer extends React.Component {
     this.state.recipes[index].name = newRecipe;
     this.state.recipes[index].ingredients = newIngredients;
     this.forceUpdate();
-    var save = this.state.recipes.filter(function(item) {
+    var save = this.state.recipes.filter(function (item) {
       return item = true
     });
     localStorage.setItem('_localrecipebox', JSON.stringify(save));
@@ -92,7 +95,7 @@ class RecipeOrganizer extends React.Component {
             <div className="recipeEdit" key={"keyEdit_" + index}>Recipe:
               <textarea ref="newRecipe" type="text" id="editName" defaultValue={item.name}></textarea>
               <button onClick={() => this.saveRecipe(index)}>Save</button>
-              <button onClick={() => this.cancelEdit(index)}>Cancel</button><br/>Ingredients:
+              <button onClick={() => this.cancelEdit(index)}>Cancel</button><br />Ingredients:
               <textarea ref="newIngredients" id="editIngredients" defaultValue={item.ingredients}></textarea>
             </div>
           )
@@ -105,7 +108,7 @@ class RecipeOrganizer extends React.Component {
               <h4 id="recipeIngredients">{item.ingredients}</h4>
             </div>
           )
-}
+        }
       </div>
     ));
 
@@ -113,8 +116,8 @@ class RecipeOrganizer extends React.Component {
       <div>
         <h1>React Recipe Box</h1>
         {displayItems
-}
-        <button onClick= { () => this.addRecipe() }>
+        }
+        <button onClick={() => this.addRecipe()}>
           Add Recipe
         </button>
         <footer>Created by Elliott Alexander</footer>
@@ -124,4 +127,4 @@ class RecipeOrganizer extends React.Component {
 }
 
 ReactDOM.render(
-  <RecipeOrganizer/>, document.getElementById("app"));
+  <RecipeOrganizer />, document.getElementById("app"));
