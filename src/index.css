@@ -15,10 +15,10 @@ body {
   height: 600px;
 	font-family: 'Roboto', sans-serif;
   background: #031927; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(bottom, #031927 , #508AA8); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom, #031927, #508AA8); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom, #031927, #508AA8); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom, #031927 , #508AA8); /* Standard syntax */
+  background: -webkit-linear-gradient(top, #031927 , #508AA8); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(top, #031927, #508AA8); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(top, #031927, #508AA8); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to top, #031927 , #508AA8); /* Standard syntax */
 	margin: 30px 30px 30px 30px;
 	padding: 0px 30px 30px 30px;
 	border: 2px solid;
@@ -28,11 +28,11 @@ body {
     transition: height 0.5s;
 }
 .recipe {
-  background: #9DD1F1; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(bottom, #9DD1F1 , #508AA8); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom, #9DD1F1, #508AA8); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom, #9DD1F1, #508AA8); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom, #9DD1F1 , #508AA8); /* Standard syntax */
+  background: rgb(240, 232, 191); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(bottom, rgb(240, 232, 191) , rgb(177, 162, 122)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, rgb(240, 232, 191) , rgb(177, 162, 122)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, rgb(240, 232, 191) , rgb(177, 162, 122)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, rgb(240, 232, 191) , rgb(177, 162, 122)); /* Standard syntax */
 	border: 2px solid;
     border-radius: 3px;
 	padding: 5px;
@@ -41,11 +41,11 @@ body {
 }
 .recipeEdit {
 	font-weight: bold;
-  background: #9DD1F1; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(bottom, #9DD1F1 , #508AA8); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom, #9DD1F1, #508AA8); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom, #9DD1F1, #508AA8); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom, #9DD1F1 , #508AA8); /* Standard syntax */
+  background: rgb(240, 232, 191); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(bottom, rgb(240, 232, 191) , rgb(177, 162, 122)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, rgb(240, 232, 191) , rgb(177, 162, 122)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, rgb(240, 232, 191) , rgb(177, 162, 122)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, rgb(240, 232, 191) , rgb(177, 162, 122)); /* Standard syntax */
 	border: 2px dashed;
     border-radius: 3px;
 	padding: 5px;
@@ -60,24 +60,15 @@ h1 {
 button{
 	font-size: 16px;
   background: #508AA8; /* For browsers that do not support gradients */
-  background: -webkit-radial-gradient(#508AA8, #192D3A); /* Safari 5.1 to 6.0 */
-  background: -o-radial-gradient(#508AA8, #192D3A); /* For Opera 11.6 to 12.0 */
-  background: -moz-radial-gradient(#508AA8, #192D3A); /* For Firefox 3.6 to 15 */
-  background: radial-gradient(#508AA8, #192D3A); /* Standard syntax */
-	border: 2px outset black;
+	border: 2px solid black;
     border-radius: 4px;
     margin: 5px;
 }
 button+button {
-  background: #BA1200; /* For browsers that do not support gradients */
-  background: -webkit-radial-gradient(#9DD1F1, #BA1200); /* Safari 5.1 to 6.0 */
-  background: -o-radial-gradient(#9DD1F1, #BA1200); /* For Opera 11.6 to 12.0 */
-  background: -moz-radial-gradient(#9DD1F1, #BA1200); /* For Firefox 3.6 to 15 */
-  background: radial-gradient(#9DD1F1, #BA1200); /* Standard syntax */
-
+  background: rgb(187, 106, 97); /* For browsers that do not support gradients */
 }
 button:hover{
-	  border: 2px inset rgb(80, 78, 78);
+  animation: select 0.6s infinite;
 }
 #editName {
 	height: 18px;
@@ -92,6 +83,7 @@ button:hover{
     border-radius: 3px;
 }
 footer {
+  color: white;
 	font-size:20px;
 	font-family: 'Lobster', cursive;
   margin: 20px 0px 0px 0px;
@@ -102,4 +94,10 @@ footer {
   0% { opacity: 0; }
   22% { opacity: 0;}
 100% { opacity: 1; }
+}
+
+@keyframes select {
+ 0% {opacity: 1}
+ 50% {opacity: 0.8 }
+ 100% {opacity: 1}
 }
