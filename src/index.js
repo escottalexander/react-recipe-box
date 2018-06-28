@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 class RecipeOrganizer extends React.Component {
+  constructor(props) {
+    super(props);
+    var recipes = this.localStorageFinder();
+    this.state = recipes;
+  }
   localStorageFinder() {
     if (localStorage.getItem('_localrecipebox')) {
       var temp = localStorage.getItem('_localrecipebox');
@@ -30,11 +35,6 @@ class RecipeOrganizer extends React.Component {
       }
     }
   }
-  constructor(props) {
-    super(props);
-    var recipes = this.localStorageFinder();
-    this.state = recipes;
-  }
   addRecipe() {
     this.closeAllOpen();
     this.state.recipes.push({
@@ -43,6 +43,8 @@ class RecipeOrganizer extends React.Component {
       ingredients: "Ingredients",
       key: "key" + (Math.random() * Math.random())
     });
+    var heightProp = document.getElementById("app").clientHeight;
+    document.getElementById("app").style.height = ((heightProp + 102) + "px");
     this.forceUpdate();
   }
   closeAllOpen() {
@@ -67,6 +69,8 @@ class RecipeOrganizer extends React.Component {
       return item = true
     });
     localStorage.setItem('_localrecipebox', JSON.stringify(save));
+    var heightProp = document.getElementById("app").clientHeight;
+    document.getElementById("app").style.height = ((heightProp - 162) + "px");
   }
   cancelEdit(index) {
     this.state.recipes[index].edit = false;
@@ -117,10 +121,12 @@ class RecipeOrganizer extends React.Component {
         <h1>React Recipe Box</h1>
         {displayItems
         }
-        <button onClick={() => this.addRecipe()}>
-          Add Recipe
+        <div id="footer">
+          <button onClick={() => this.addRecipe()}>
+            Add Recipe
         </button>
-        <footer>Created by Elliott Alexander</footer>
+          <footer>Created by Elliott Alexander</footer>
+        </div>
       </div>
     )
   }
